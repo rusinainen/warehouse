@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Tuotteet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> 
+	<a href="/vastaanota" class="btn default">Aloita vastaanotto</a>
+	<a href="/index" class="btn default">Palaa etusivulle</a>
+	<div class="col-md-4">
+		<h1>Tuotelista</h1>
+	</div>		
+	<table class="table table-striped">
+			<tr>
+				<th>Nimi</th>
+				<th>Valmistaja</th>
+				<th>Koko</th>
+				<th>Väri</th>
+				<th>Hinta</th>
+				<th>Osasto</th>
+			</tr>
+	<tr th:each = "tuote : ${tuotteet}">
+		<td th:text="${tuote.nimi}"></td>
+		<td th:text="${tuote.valmistaja}"></td>
+		<td th:text="${tuote.koko}"></td>
+		<td th:text="${tuote.vari}"></td>  
+		<td th:text="${tuote.hinta}"></td> 
+		<td><a th:href="@{/osastolista/{id}(id=${tuote.osasto.osastoId})}" class="btn default" th:text="${tuote.osasto.nimi}"></a></td>    	
+		<td><a th:href="@{/delete/{id}(id=${tuote.id})}" class="btn btn-danger">Poista tuote</a></td>	
+	</tr>
+</table>
+</body>
+</html>

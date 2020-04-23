@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Tuotteet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> 
+	<a href="/vastaanota" class="btn default">Aloita vastaanotto</a>
+	<a href="/index" class="btn default">Palaa etusivulle</a>
+	<div class="col-md-4">
+		<h1>Tuotelista</h1>
+	</div>		
+	<table class="table table-striped">
+			<tr>
+				<th>Paikka</th>
+				<th>Osasto</th>
+				<th>Kappalemäärä</th>
+		</tr>
+			<tr th:each = "paikka : ${paikat}">
+			<td th:text="${paikka.numero}"></td> 
+			<td th:text="${paikka.osasto.nimi}"></td> 
+			<td th:text="${paikka.kplmaara}"></td>
+			<td><a th:href="@{/edit/{id}(id=${paikka.paikkaId})}" class="btn btn-danger">Muokkaa saldoa</a></td>	
+		</tr>	
+</table>
+</body>
+</html>

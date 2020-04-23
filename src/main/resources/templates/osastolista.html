@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Osastot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> 
+	<div class="col-md-4">
+		<h1>List of Departments</h1>
+	</div>		
+	<table class="table table-striped">
+			<tr>
+				<th></th>
+			</tr>
+	<tr th:each = "osasto : ${osastot}">
+	<td><a th:href="@{/osastolista/{id}(id=${osasto.osastoId})}" class="btn" th:text="${osasto.nimi}"></a></td>    
+	
+	</tr>
+	
+</table>
+</body>
+</html>

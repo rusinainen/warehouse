@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Vastaanotto</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Receive an item</h1>
+		<form th:object="${tuote}" th:action="@{savet}" action="#" method="post">
+			<label for="nimi">Nimi</label>
+			<input type="text" id="nimi" th:field="*{nimi}" />
+			<label for="title">Valmistaja</label>
+			<input type="text" id="valmistaja" th:field="*{valmistaja}" />
+			<label for="koko">Koko</label>
+			<input type="text" id="koko" th:field="*{koko}" />
+			<label for="vari">Väri</label>
+			<input type="text" id="vari" th:field="*{vari}" />
+			<label for="hinta">Hinta</label>
+			<input type="text" id="hinta" th:field="*{hinta}" />
+			
+			<label for="osastot">Osasto</label>
+			 <select id="osastot" th:field="*{osasto}" class="form-control">
+       		<option th:each="osasto: ${osastot}" th:value="${osasto.osastoId}" th:text="${osasto.nimi}"></option>
+    		</select>
+   
+    		<input type="submit" value="Save"></input>
+    		</form>
+    		
+    		<!-- <form th:object="${latka}" th:action="@{save}" action="#" method="post">
+    		
+    		<label for="latkat">Valitse lätkä tuotteelle</label>
+			 <select id="latkat" th:field="*{latka}" class="form-control">
+       			<option th:each="latka: ${latkat}" th:value="${latka.latkaId}" th:text="${latka.viivakoodi}"></option>
+    		</select>
+			<label for="title">Anna tuotteiden lukumäärä</label>
+			<input type="text" id="kplmaara" th:field="*{kplmaara}" />
+    		
+			<input type="submit" value="Save"></input>
+			</form> 
+			-->
+			
+	</body>
+	</html>
