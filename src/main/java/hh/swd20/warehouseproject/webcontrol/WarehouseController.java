@@ -80,7 +80,8 @@ public class WarehouseController {
 		}
 		
 	*/
-	
+		
+	 // Ei tallenna vastausta 
     // Muokkaa tuotteen saldoa hyllyssä
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String editSaldo(@PathVariable("id") Long paikkaId, Model model) {
@@ -113,7 +114,7 @@ public class WarehouseController {
         return "paikkalista";
     }
     
-    // Tee vielä html-sivu
+    //Toimii (tavallaan)
     //Listaa lätkät
     @RequestMapping(value= {"/latkalista"}, method=RequestMethod.GET)
     public String LatkaListaus(Model model) {

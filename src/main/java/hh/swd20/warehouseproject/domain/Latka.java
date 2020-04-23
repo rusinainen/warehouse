@@ -55,19 +55,16 @@ public class Latka {
 		this.kplmaara = kplmaara;
 	}
 
-	/*
-	public Tuote getTuote() {
+	
+	public String getTuote() {
 		return tuote;
 	}
 	
-	public Tuote getTuote(String viivakoodi) {
-		return tuote;
-	}
 
-	public void setTuote(Tuote tuote) {
+	public void setTuote(String tuote) {
 		this.tuote = tuote;
 	}
-	 */
+	 
 	
 	@Override
 	public String toString() {
